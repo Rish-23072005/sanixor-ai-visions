@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { GraduationCap, Rocket, Compass, ArrowRight } from "lucide-react";
+import { GraduationCap, Rocket, Compass, ArrowRight, Code2, BarChart3, Palette, Briefcase, Workflow, Bot } from "lucide-react";
 import { Layout } from "@/components/sanixor/Layout";
 
 export const Route = createFileRoute("/training")({
@@ -20,6 +20,18 @@ const tracks = [
   { icon: Rocket, title: "Internship Program", duration: "3–6 months · Paid", desc: "Work on real Sanixor products under senior engineers. Top performers convert to full-time." },
   { icon: Compass, title: "Career Guidance", duration: "1:1 · Lifetime", desc: "Resume reviews, interview prep, and a private network of AI hiring managers." },
 ];
+
+const domains = [
+  { icon: Code2, title: "Technology & Development", desc: "Full-stack engineering, modern frameworks, and production systems." },
+  { icon: BarChart3, title: "Data Analytics & BI", desc: "SQL, data warehousing, Power BI, Tableau — decisions from data." },
+  { icon: Palette, title: "UI/UX & Product Design", desc: "Design systems, prototyping, and shipping delightful products." },
+  { icon: Briefcase, title: "Career Skills", desc: "Resume, interview prep, communication — built for employability." },
+  { icon: Workflow, title: "Automation & No-Code", desc: "Modern automation tools to remove repetitive workflows." },
+  { icon: Bot, title: "Agentic AI", desc: "Advanced multi-agent architectures and intelligent system design." },
+];
+
+const levels = ["Beginner", "Intermediate", "Advanced"];
+const highlights = ["Project-based learning", "Industry-aligned curriculum", "Hands-on training", "Mentorship support", "Strong focus on employability"];
 
 function TrainingPage() {
   return (
@@ -61,6 +73,50 @@ function TrainingPage() {
               <div className="hidden md:block md:w-1/2" />
             </motion.div>
           ))}
+        </div>
+      </section>
+
+      {/* DOMAINS */}
+      <section className="mx-auto max-w-7xl px-6 pb-20">
+        <div className="mb-10 text-center">
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-primary">Domains Covered</p>
+          <h2 className="text-4xl font-bold md:text-5xl">Beyond AI — full-spectrum learning.</h2>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
+          {domains.map((d, i) => (
+            <motion.div key={d.title} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.05 }} className="rounded-3xl glass p-6 shadow-elegant transition-smooth hover:shadow-glow">
+              <div className="mb-4 grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary shadow-glow">
+                <d.icon className="h-5 w-5 text-primary-foreground" />
+              </div>
+              <h3 className="text-lg font-semibold">{d.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{d.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* LEVELS + HIGHLIGHTS */}
+      <section className="mx-auto grid max-w-6xl gap-8 px-6 pb-24 md:grid-cols-2">
+        <div className="rounded-3xl glass-strong p-8 shadow-elegant">
+          <p className="text-xs uppercase tracking-wider text-primary">Learning Levels</p>
+          <h3 className="mt-2 text-2xl font-bold">From zero to architect.</h3>
+          <div className="mt-6 flex flex-wrap gap-3">
+            {levels.map((l) => (
+              <span key={l} className="rounded-full glass px-5 py-2 text-sm font-medium">{l}</span>
+            ))}
+          </div>
+          <p className="mt-6 text-sm text-muted-foreground italic">“We don’t make fake promises — we teach at an architect level.”</p>
+        </div>
+        <div className="rounded-3xl glass-strong p-8 shadow-elegant">
+          <p className="text-xs uppercase tracking-wider text-primary">Highlights</p>
+          <h3 className="mt-2 text-2xl font-bold">Built for employability.</h3>
+          <ul className="mt-6 space-y-3 text-sm">
+            {highlights.map((h) => (
+              <li key={h} className="flex items-center gap-3">
+                <span className="h-2 w-2 rounded-full bg-primary shadow-glow" /> {h}
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </Layout>
