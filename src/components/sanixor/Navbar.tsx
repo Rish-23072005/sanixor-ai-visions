@@ -1,8 +1,7 @@
 import { Link } from "@tanstack/react-router";
-import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useTheme } from "./ThemeProvider";
 import { Logo } from "./Logo";
+import { ThemePicker } from "./ThemePicker";
 
 const links = [
   { to: "/", label: "Home" },
@@ -14,7 +13,6 @@ const links = [
 ] as const;
 
 export function Navbar() {
-  const { theme, toggle } = useTheme();
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -47,13 +45,7 @@ export function Navbar() {
           ))}
         </ul>
 
-        <button
-          onClick={toggle}
-          aria-label="Toggle theme"
-          className="grid h-10 w-10 place-items-center rounded-full glass transition-smooth hover:scale-110"
-        >
-          {theme === "dark" ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
-        </button>
+        <ThemePicker />
       </nav>
     </header>
   );
