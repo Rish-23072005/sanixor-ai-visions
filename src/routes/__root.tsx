@@ -31,14 +31,16 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Sanixor.AI — Automating Intelligence. Eliminating Bias." },
-      { name: "description", content: "Sanixor.AI builds bias-free AI automation, training, and hiring systems. Sanskrati × Work × Automation." },
+      { title: "Lovable App" },
+      { name: "description", content: "Sanixor.AI is a premium AI startup website showcasing AI-powered automation and bias elimination." },
       { name: "author", content: "Sanixor.AI" },
-      { property: "og:title", content: "Sanixor.AI — Automating Intelligence" },
-      { property: "og:description", content: "Bias-free AI automation, training, and hiring." },
+      { property: "og:title", content: "Lovable App" },
+      { property: "og:description", content: "Sanixor.AI is a premium AI startup website showcasing AI-powered automation and bias elimination." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Lovable App" },
+      { name: "twitter:description", content: "Sanixor.AI is a premium AI startup website showcasing AI-powered automation and bias elimination." },
     ],
     links: [
       {
