@@ -1,17 +1,13 @@
 import { Link } from "@tanstack/react-router";
-import { Github, Linkedin, Twitter, Sparkles } from "lucide-react";
+import { Github, Linkedin, Twitter } from "lucide-react";
+import { Logo } from "./Logo";
 
 export function Footer() {
   return (
     <footer className="relative border-t border-border/60 mt-32">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 py-16 md:grid-cols-4">
         <div className="md:col-span-2">
-          <Link to="/" className="flex items-center gap-2 font-bold">
-            <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-primary">
-              <Sparkles className="h-4 w-4 text-primary-foreground" />
-            </span>
-            Sanixor<span className="text-primary">.AI</span>
-          </Link>
+          <Logo size="md" />
           <p className="mt-4 max-w-md text-sm text-muted-foreground">
             Sanskriti × Work × Automation. A complete AI ecosystem — products (HackEval, BitBenchmark, AutoDash), agentic services, and industry-aligned training.
           </p>
