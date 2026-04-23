@@ -137,7 +137,7 @@ function Index() {
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="mb-12 text-center">
           <h2 className="text-4xl font-bold md:text-5xl">What we offer</h2>
-          <p className="mt-3 text-muted-foreground">Three pillars. One mission.</p>
+          <p className="mt-3 text-muted-foreground">Products, services, and training — one integrated ecosystem.</p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {offerings.map((o, i) => (
@@ -147,6 +147,25 @@ function Index() {
               </div>
               <h3 className="mb-2 text-xl font-semibold">{o.title}</h3>
               <p className="text-sm text-muted-foreground">{o.desc}</p>
+            </GlassCard>
+          ))}
+        </div>
+      </section>
+
+      {/* PHILOSOPHY */}
+      <section className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mb-12 text-center">
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-primary">Core Philosophy</p>
+          <h2 className="text-4xl font-bold md:text-5xl">How we think.</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {philosophy.map((p, i) => (
+            <GlassCard key={p.title} delay={i * 0.1}>
+              <div className="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-gradient-primary shadow-glow">
+                <p.icon className="h-5 w-5 text-primary-foreground" />
+              </div>
+              <h3 className="mb-2 text-xl font-semibold">{p.title}</h3>
+              <p className="text-sm text-muted-foreground">{p.desc}</p>
             </GlassCard>
           ))}
         </div>
