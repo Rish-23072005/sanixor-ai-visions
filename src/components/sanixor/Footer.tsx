@@ -13,7 +13,7 @@ export function Footer() {
             Sanixor<span className="text-primary">.AI</span>
           </Link>
           <p className="mt-4 max-w-md text-sm text-muted-foreground">
-            Sanskrati × Work × Automation. We build bias-free AI systems that save time and accelerate human potential.
+            Sanskriti × Work × Automation. A complete AI ecosystem — products (HackEval, BitBenchmark, AutoDash), agentic services, and industry-aligned training.
           </p>
           <div className="mt-6 flex gap-3">
             {[Twitter, Linkedin, Github].map((Icon, i) => (
