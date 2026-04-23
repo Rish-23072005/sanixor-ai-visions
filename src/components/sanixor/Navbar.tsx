@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
-import { Moon, Sun, Sparkles } from "lucide-react";
+import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTheme } from "./ThemeProvider";
+import { Logo } from "./Logo";
 
 const links = [
   { to: "/", label: "Home" },
@@ -29,14 +30,7 @@ export function Navbar() {
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
-        <Link to="/" className="flex items-center gap-2 font-bold tracking-tight">
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-gradient-primary shadow-glow">
-            <Sparkles className="h-4 w-4 text-primary-foreground" />
-          </span>
-          <span className="text-lg">
-            Sanixor<span className="text-primary">.AI</span>
-          </span>
-        </Link>
+        <Logo size="md" />
 
         <ul className="hidden items-center gap-1 md:flex">
           {links.map((l) => (
