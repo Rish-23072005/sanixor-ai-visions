@@ -237,6 +237,44 @@ function Index() {
           ))}
         </div>
       </section>
+
+      {/* ETHICAL AI */}
+      <section className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mb-12 text-center">
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-primary">Ethical AI Commitment</p>
+          <h2 className="text-4xl font-bold md:text-5xl">Responsible by design.</h2>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
+          {ethics.map((e, i) => (
+            <GlassCard key={e.title} delay={i * 0.05} className="text-center">
+              <div className="mx-auto mb-5 grid h-12 w-12 place-items-center rounded-2xl glass">
+                <e.icon className="h-5 w-5 text-primary" />
+              </div>
+              <h3 className="mb-2 text-base font-semibold">{e.title}</h3>
+              <p className="text-sm text-muted-foreground">{e.desc}</p>
+            </GlassCard>
+          ))}
+        </div>
+      </section>
+
+      {/* FOUNDER NOTE */}
+      <section className="mx-auto max-w-4xl px-6 py-24 text-center">
+        <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-primary">Founder’s Note</p>
+        <h2 className="text-3xl font-bold md:text-4xl leading-snug">
+          “Sanixor.AI was built to transform how technology interacts with human workflows. The goal is not just to solve problems — but to redefine efficiency and innovation.”
+        </h2>
+      </section>
+
+      {/* TAGLINES MARQUEE */}
+      <section className="overflow-hidden border-y border-border/60 py-8">
+        <div className="flex animate-[marquee_40s_linear_infinite] gap-12 whitespace-nowrap text-2xl font-semibold text-muted-foreground md:text-4xl">
+          {[...taglines, ...taglines].map((t, i) => (
+            <span key={i} className="inline-flex items-center gap-12">
+              <span className="text-gradient">★</span> {t}
+            </span>
+          ))}
+        </div>
+      </section>
     </Layout>
   );
 }
