@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowRight, Brain, Clock, ShieldCheck, Sparkles, Bot, GraduationCap, Briefcase } from "lucide-react";
+import { ArrowRight, Brain, Clock, ShieldCheck, Sparkles, Bot, GraduationCap, Briefcase, Zap, Layers, Eye, Lock, Check } from "lucide-react";
 import { Layout } from "@/components/sanixor/Layout";
 import { Scene3D } from "@/components/sanixor/Scene3D";
 import { GlassCard } from "@/components/sanixor/GlassCard";
@@ -17,15 +17,36 @@ export const Route = createFileRoute("/")({
 });
 
 const offerings = [
-  { icon: Bot, title: "AI Products", desc: "Production-grade AI tools that ship outcomes — not demos." },
-  { icon: GraduationCap, title: "Training", desc: "Hands-on AI bootcamps, mentorship, and career-grade curricula." },
-  { icon: Briefcase, title: "Hiring", desc: "We connect bias-free talent with mission-driven AI teams." },
+  { icon: Bot, title: "AI Products", desc: "HackEval, BitBenchmark, AutoDash — production-grade tools that ship outcomes." },
+  { icon: Layers, title: "AI Services", desc: "Agent as a Service (AaaS) and customized agentic solutions for enterprises." },
+  { icon: GraduationCap, title: "Training & Careers", desc: "Industry-aligned bootcamps across AI, Data, Design, and Agentic systems." },
 ];
 
 const why = [
   { icon: ShieldCheck, title: "Bias-free automation", desc: "Audited models with explainable, equitable decisions by design." },
-  { icon: Clock, title: "10× time saved", desc: "Replace repetitive workflows with intelligent agents that learn." },
-  { icon: Brain, title: "AI-driven decisions", desc: "Real-time insights from data your team already owns." },
+  { icon: Clock, title: "10× time saved", desc: "Replace repetitive workflows with intelligent multi-agent systems." },
+  { icon: Brain, title: "AI-driven decisions", desc: "Real-time, predictive insights from data your team already owns." },
+];
+
+const philosophy = [
+  { icon: Zap, title: "Automation First", desc: "Replace repetitive and manual processes with intelligent automation." },
+  { icon: Brain, title: "Intelligence Driven", desc: "Leverage AI for predictive, adaptive, and real-time decision-making." },
+  { icon: Layers, title: "Scalable Innovation", desc: "Build systems that scale from individuals to enterprises." },
+];
+
+const ethics = [
+  { icon: Eye, title: "Transparency", desc: "Open, explainable systems users and auditors can trust." },
+  { icon: Lock, title: "Privacy First", desc: "Data minimization and security baked into every layer." },
+  { icon: ShieldCheck, title: "Bias Reduction", desc: "Continuously audited models that are fair by design." },
+  { icon: Check, title: "Responsible AI", desc: "Human-in-the-loop guardrails for every deployment." },
+];
+
+const taglines = [
+  "Automating Intelligence, Empowering Future",
+  "Where AI Meets Efficiency",
+  "Smart Systems. Smarter Future.",
+  "Redefining Work with AI",
+  "We don’t make fake promises — we teach at an architect level.",
 ];
 
 function Index() {
