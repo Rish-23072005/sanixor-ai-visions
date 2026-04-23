@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { motion } from "framer-motion";
 import Tilt from "react-parallax-tilt";
-import { Code2, Github, Share2, X } from "lucide-react";
+import { Code2, Gauge, BarChart3, Bot, Workflow, X } from "lucide-react";
 import { useState } from "react";
 import { Layout } from "@/components/sanixor/Layout";
 
@@ -18,9 +18,20 @@ export const Route = createFileRoute("/products")({
 });
 
 const products = [
-  { id: "hackeval", name: "HackEval", tag: "AI Hackathon Evaluation", icon: Code2, desc: "Auto-evaluates hackathon submissions across code quality, originality, and impact — bias-free judging at scale.", features: ["Plagiarism detection", "Multi-criteria scoring", "Live leaderboard", "Team analytics"] },
-  { id: "bitbench", name: "BitBench", tag: "LeetCode × GitHub fusion", icon: Github, desc: "A unified developer benchmark that fuses LeetCode skill with real GitHub contributions to score true engineering ability.", features: ["GitHub deep-scan", "Algo difficulty index", "Recruiter dashboard", "Verified profiles"] },
-  { id: "mcp", name: "MCP", tag: "Social Media Automation", icon: Share2, desc: "Multi-channel content pipeline — schedule, generate, and analyze brand posts across every platform with one AI brain.", features: ["AI copy & visuals", "Cross-posting", "Engagement insights", "Brand voice tuning"] },
+  { id: "hackeval", name: "HackEval", tag: "Flagship · AI Hackathon Evaluation", icon: Code2, desc: "AI-powered multi-agent hackathon evaluation system — transparent, intelligent, and automated. Solves slow, biased, inconsistent manual judging.", features: ["AI-based project evaluation", "Bias-free scoring", "Real-time leaderboard", "Automated judge assignment", "Scalable for large events"] },
+  { id: "bitbenchmark", name: "BitBenchmark", tag: "Performance Intelligence", icon: Gauge, desc: "Standardized AI-driven benchmarking platform for systems, models, and workflows — with real-time comparative analytics.", features: ["AI model performance benchmarking", "System efficiency scoring", "Comparative analytics dashboards", "Real-time performance insights"] },
+  { id: "autodash", name: "AutoDash", tag: "Analytics & Dashboard Automation", icon: BarChart3, desc: "AI-powered analytics platform that auto-generates dashboards and predictive reports across your data stack.", features: ["Automated dashboard generation", "Real-time data visualization", "Power BI / Tableau / SQL integration", "Predictive insights & reporting"] },
+];
+
+const services = [
+  { name: "Agent as a Service (AaaS)", icon: Bot, desc: "Deploy intelligent AI agents without infrastructure complexity.", points: ["Multi-agent systems", "Task automation agents", "Conversational AI agents", "Workflow orchestration"] },
+  { name: "Customized Agentic Solutions", icon: Workflow, desc: "Tailor-made AI systems designed for specific business needs.", points: ["End-to-end automation", "Domain-specific AI agents", "Enterprise workflow automation", "Decision intelligence systems"] },
+];
+
+const tiers = [
+  { name: "Free", price: "$0", desc: "Get started with core capabilities.", features: ["Community access", "Core product features", "Limited usage"] },
+  { name: "Pro", price: "$49", desc: "For professionals and growing teams.", features: ["All Free features", "Premium features", "Priority support", "Continuous updates"] },
+  { name: "Enterprise", price: "Custom", desc: "Scalable, secure, and supported.", features: ["Custom integrations", "Dedicated SLAs", "Security & compliance", "On-prem / private cloud"] },
 ];
 
 function ProductsPage() {
@@ -55,6 +66,56 @@ function ProductsPage() {
             </Tilt>
           </motion.div>
         ))}
+      </section>
+
+      {/* SERVICES */}
+      <section className="mx-auto max-w-7xl px-6 pb-20">
+        <div className="mb-10 text-center">
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-primary">Services</p>
+          <h2 className="text-4xl font-bold md:text-5xl">Agentic AI, delivered.</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-2">
+          {services.map((s, i) => (
+            <motion.div key={s.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.1 }} className="rounded-3xl glass p-8 shadow-elegant">
+              <div className="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-gradient-primary shadow-glow">
+                <s.icon className="h-5 w-5 text-primary-foreground" />
+              </div>
+              <h3 className="text-2xl font-bold">{s.name}</h3>
+              <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
+              <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+                {s.points.map((pt) => (
+                  <li key={pt} className="flex items-center gap-2 text-sm">
+                    <span className="h-1.5 w-1.5 rounded-full bg-primary shadow-glow" /> {pt}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* SUBSCRIPTION */}
+      <section className="mx-auto max-w-7xl px-6 pb-24">
+        <div className="mb-10 text-center">
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-primary">Subscription</p>
+          <h2 className="text-4xl font-bold md:text-5xl">Plans that scale with you.</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {tiers.map((t, i) => (
+            <motion.div key={t.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: i * 0.08 }} className={`relative rounded-3xl p-8 shadow-elegant ${i === 1 ? "glass-strong ring-2 ring-primary" : "glass"}`}>
+              {i === 1 && <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-gradient-primary px-3 py-1 text-xs font-semibold text-primary-foreground shadow-glow">Most popular</span>}
+              <h3 className="text-xl font-semibold">{t.name}</h3>
+              <p className="mt-2 text-4xl font-bold text-gradient">{t.price}</p>
+              <p className="mt-2 text-sm text-muted-foreground">{t.desc}</p>
+              <ul className="mt-6 space-y-2 text-sm">
+                {t.features.map((f) => (
+                  <li key={f} className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-primary" /> {f}</li>
+                ))}
+              </ul>
+              <button className="mt-7 w-full rounded-full bg-gradient-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition-smooth hover:scale-[1.02]">Get started</button>
+            </motion.div>
+          ))}
+        </div>
       </section>
 
       {active && (
