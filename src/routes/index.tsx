@@ -102,10 +102,23 @@ function Index() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-primary">About</p>
-            <h2 className="text-4xl font-bold md:text-5xl">Intelligence, without the bias.</h2>
+            <h2 className="text-4xl font-bold md:text-5xl">A complete AI ecosystem.</h2>
             <p className="mt-6 text-lg text-muted-foreground">
-              Sanixor.AI fuses culture (<em>Sanskrati</em>), work, and automation. We build AI products and pipelines that remove human bias, save thousands of hours, and create real career paths in the age of intelligent machines.
+              The name <em>Sanixor</em> comes from <strong>Sanskriti</strong> (culture) + <strong>Work</strong> + <strong>Automation</strong> — a vision where technology enhances human productivity while preserving meaningful workflows.
             </p>
+            <p className="mt-4 text-base text-muted-foreground">
+              We integrate AI-powered products, SaaS platforms, corporate tools, and career-focused training into one intelligent ecosystem — from learners and startups to enterprises and institutions.
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-2xl glass p-5">
+                <p className="text-xs uppercase tracking-wider text-primary">Vision</p>
+                <p className="mt-2 text-sm text-muted-foreground">A future where intelligent systems collaborate seamlessly with humans for smarter decisions and scalable innovation.</p>
+              </div>
+              <div className="rounded-2xl glass p-5">
+                <p className="text-xs uppercase tracking-wider text-primary">Mission</p>
+                <p className="mt-2 text-sm text-muted-foreground">Automate complex processes, eliminate inefficiencies, and empower people with industry-relevant skills — ethically.</p>
+              </div>
+            </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative aspect-square">
             <div className="absolute inset-0 animate-pulse-glow rounded-3xl bg-gradient-accent opacity-40 blur-3xl" />
