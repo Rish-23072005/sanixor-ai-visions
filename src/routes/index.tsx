@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { motion } from "framer-motion";
-import { ArrowRight, Brain, Clock, ShieldCheck, Sparkles, Bot, GraduationCap, Briefcase } from "lucide-react";
+import { ArrowRight, Brain, Clock, ShieldCheck, Sparkles, Bot, GraduationCap, Briefcase, Zap, Layers, Eye, Lock, Check } from "lucide-react";
 import { Layout } from "@/components/sanixor/Layout";
 import { Scene3D } from "@/components/sanixor/Scene3D";
 import { GlassCard } from "@/components/sanixor/GlassCard";
@@ -17,15 +17,36 @@ export const Route = createFileRoute("/")({
 });
 
 const offerings = [
-  { icon: Bot, title: "AI Products", desc: "Production-grade AI tools that ship outcomes — not demos." },
-  { icon: GraduationCap, title: "Training", desc: "Hands-on AI bootcamps, mentorship, and career-grade curricula." },
-  { icon: Briefcase, title: "Hiring", desc: "We connect bias-free talent with mission-driven AI teams." },
+  { icon: Bot, title: "AI Products", desc: "HackEval, BitBenchmark, AutoDash — production-grade tools that ship outcomes." },
+  { icon: Layers, title: "AI Services", desc: "Agent as a Service (AaaS) and customized agentic solutions for enterprises." },
+  { icon: GraduationCap, title: "Training & Careers", desc: "Industry-aligned bootcamps across AI, Data, Design, and Agentic systems." },
 ];
 
 const why = [
   { icon: ShieldCheck, title: "Bias-free automation", desc: "Audited models with explainable, equitable decisions by design." },
-  { icon: Clock, title: "10× time saved", desc: "Replace repetitive workflows with intelligent agents that learn." },
-  { icon: Brain, title: "AI-driven decisions", desc: "Real-time insights from data your team already owns." },
+  { icon: Clock, title: "10× time saved", desc: "Replace repetitive workflows with intelligent multi-agent systems." },
+  { icon: Brain, title: "AI-driven decisions", desc: "Real-time, predictive insights from data your team already owns." },
+];
+
+const philosophy = [
+  { icon: Zap, title: "Automation First", desc: "Replace repetitive and manual processes with intelligent automation." },
+  { icon: Brain, title: "Intelligence Driven", desc: "Leverage AI for predictive, adaptive, and real-time decision-making." },
+  { icon: Layers, title: "Scalable Innovation", desc: "Build systems that scale from individuals to enterprises." },
+];
+
+const ethics = [
+  { icon: Eye, title: "Transparency", desc: "Open, explainable systems users and auditors can trust." },
+  { icon: Lock, title: "Privacy First", desc: "Data minimization and security baked into every layer." },
+  { icon: ShieldCheck, title: "Bias Reduction", desc: "Continuously audited models that are fair by design." },
+  { icon: Check, title: "Responsible AI", desc: "Human-in-the-loop guardrails for every deployment." },
+];
+
+const taglines = [
+  "Automating Intelligence, Empowering Future",
+  "Where AI Meets Efficiency",
+  "Smart Systems. Smarter Future.",
+  "Redefining Work with AI",
+  "We don’t make fake promises — we teach at an architect level.",
 ];
 
 function Index() {
@@ -81,10 +102,23 @@ function Index() {
         <div className="grid items-center gap-12 md:grid-cols-2">
           <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
             <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-primary">About</p>
-            <h2 className="text-4xl font-bold md:text-5xl">Intelligence, without the bias.</h2>
+            <h2 className="text-4xl font-bold md:text-5xl">A complete AI ecosystem.</h2>
             <p className="mt-6 text-lg text-muted-foreground">
-              Sanixor.AI fuses culture (<em>Sanskrati</em>), work, and automation. We build AI products and pipelines that remove human bias, save thousands of hours, and create real career paths in the age of intelligent machines.
+              The name <em>Sanixor</em> comes from <strong>Sanskriti</strong> (culture) + <strong>Work</strong> + <strong>Automation</strong> — a vision where technology enhances human productivity while preserving meaningful workflows.
             </p>
+            <p className="mt-4 text-base text-muted-foreground">
+              We integrate AI-powered products, SaaS platforms, corporate tools, and career-focused training into one intelligent ecosystem — from learners and startups to enterprises and institutions.
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-2xl glass p-5">
+                <p className="text-xs uppercase tracking-wider text-primary">Vision</p>
+                <p className="mt-2 text-sm text-muted-foreground">A future where intelligent systems collaborate seamlessly with humans for smarter decisions and scalable innovation.</p>
+              </div>
+              <div className="rounded-2xl glass p-5">
+                <p className="text-xs uppercase tracking-wider text-primary">Mission</p>
+                <p className="mt-2 text-sm text-muted-foreground">Automate complex processes, eliminate inefficiencies, and empower people with industry-relevant skills — ethically.</p>
+              </div>
+            </div>
           </motion.div>
           <motion.div initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="relative aspect-square">
             <div className="absolute inset-0 animate-pulse-glow rounded-3xl bg-gradient-accent opacity-40 blur-3xl" />
@@ -103,7 +137,7 @@ function Index() {
       <section className="mx-auto max-w-7xl px-6 py-20">
         <div className="mb-12 text-center">
           <h2 className="text-4xl font-bold md:text-5xl">What we offer</h2>
-          <p className="mt-3 text-muted-foreground">Three pillars. One mission.</p>
+          <p className="mt-3 text-muted-foreground">Products, services, and training — one integrated ecosystem.</p>
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {offerings.map((o, i) => (
@@ -113,6 +147,25 @@ function Index() {
               </div>
               <h3 className="mb-2 text-xl font-semibold">{o.title}</h3>
               <p className="text-sm text-muted-foreground">{o.desc}</p>
+            </GlassCard>
+          ))}
+        </div>
+      </section>
+
+      {/* PHILOSOPHY */}
+      <section className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mb-12 text-center">
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-primary">Core Philosophy</p>
+          <h2 className="text-4xl font-bold md:text-5xl">How we think.</h2>
+        </div>
+        <div className="grid gap-6 md:grid-cols-3">
+          {philosophy.map((p, i) => (
+            <GlassCard key={p.title} delay={i * 0.1}>
+              <div className="mb-5 grid h-12 w-12 place-items-center rounded-xl bg-gradient-primary shadow-glow">
+                <p.icon className="h-5 w-5 text-primary-foreground" />
+              </div>
+              <h3 className="mb-2 text-xl font-semibold">{p.title}</h3>
+              <p className="text-sm text-muted-foreground">{p.desc}</p>
             </GlassCard>
           ))}
         </div>
@@ -181,6 +234,44 @@ function Index() {
                 </div>
               </div>
             </GlassCard>
+          ))}
+        </div>
+      </section>
+
+      {/* ETHICAL AI */}
+      <section className="mx-auto max-w-7xl px-6 py-20">
+        <div className="mb-12 text-center">
+          <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-primary">Ethical AI Commitment</p>
+          <h2 className="text-4xl font-bold md:text-5xl">Responsible by design.</h2>
+        </div>
+        <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
+          {ethics.map((e, i) => (
+            <GlassCard key={e.title} delay={i * 0.05} className="text-center">
+              <div className="mx-auto mb-5 grid h-12 w-12 place-items-center rounded-2xl glass">
+                <e.icon className="h-5 w-5 text-primary" />
+              </div>
+              <h3 className="mb-2 text-base font-semibold">{e.title}</h3>
+              <p className="text-sm text-muted-foreground">{e.desc}</p>
+            </GlassCard>
+          ))}
+        </div>
+      </section>
+
+      {/* FOUNDER NOTE */}
+      <section className="mx-auto max-w-4xl px-6 py-24 text-center">
+        <p className="mb-3 text-sm font-medium uppercase tracking-[0.2em] text-primary">Founder’s Note</p>
+        <h2 className="text-3xl font-bold md:text-4xl leading-snug">
+          “Sanixor.AI was built to transform how technology interacts with human workflows. The goal is not just to solve problems — but to redefine efficiency and innovation.”
+        </h2>
+      </section>
+
+      {/* TAGLINES MARQUEE */}
+      <section className="overflow-hidden border-y border-border/60 py-8">
+        <div className="flex animate-[marquee_40s_linear_infinite] gap-12 whitespace-nowrap text-2xl font-semibold text-muted-foreground md:text-4xl">
+          {[...taglines, ...taglines].map((t, i) => (
+            <span key={i} className="inline-flex items-center gap-12">
+              <span className="text-gradient">★</span> {t}
+            </span>
           ))}
         </div>
       </section>
