@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import logoMark from "@/assets/sanixor-mark.png";
 
 interface LogoProps {
@@ -21,7 +21,9 @@ export function Logo({ variant = "full", size = "md", className = "" }: LogoProp
       aria-label="Sanixor.AI — Home"
       className={`group flex items-center gap-2.5 font-bold tracking-tight transition-smooth ${className}`}
     >
-      <span className={`relative grid ${s.mark} place-items-center rounded-xl transition-smooth group-hover:scale-105`}>
+      <span
+        className={`relative grid ${s.mark} place-items-center rounded-xl transition-smooth group-hover:scale-105`}
+      >
         <span className="absolute inset-0 rounded-xl bg-gradient-primary opacity-0 blur-md transition-smooth group-hover:opacity-60" />
         <img
           src={logoMark}

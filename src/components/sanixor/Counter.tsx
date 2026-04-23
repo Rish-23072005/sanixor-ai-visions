@@ -1,6 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 
-export function Counter({ value, suffix = "", duration = 1800 }: { value: number; suffix?: string; duration?: number }) {
+export function Counter({
+  value,
+  suffix = "",
+  duration = 1800,
+}: {
+  value: number;
+  suffix?: string;
+  duration?: number;
+}) {
   const [n, setN] = useState(0);
   const ref = useRef<HTMLSpanElement>(null);
   const started = useRef(false);
@@ -23,5 +31,10 @@ export function Counter({ value, suffix = "", duration = 1800 }: { value: number
     return () => obs.disconnect();
   }, [value, duration]);
 
-  return <span ref={ref}>{n.toLocaleString()}{suffix}</span>;
+  return (
+    <span ref={ref}>
+      {n.toLocaleString()}
+      {suffix}
+    </span>
+  );
 }
