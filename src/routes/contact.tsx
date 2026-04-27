@@ -1,5 +1,17 @@
 import { useState, useEffect } from "react";
-import { Mail, MapPin, Send, Github, Linkedin, Twitter, ArrowRight, Check, Clock, MessageCircle, Zap } from "lucide-react";
+import {
+  Mail,
+  MapPin,
+  Send,
+  Github,
+  Linkedin,
+  Twitter,
+  ArrowRight,
+  Check,
+  Clock,
+  MessageCircle,
+  Zap,
+} from "lucide-react";
 import { Layout } from "@/components/sanixor/Layout";
 
 const topics = ["General Inquiry", "Product Demo", "Training", "Partnership", "Careers", "Press"];
@@ -21,8 +33,11 @@ export default function ContactPage() {
       <section className="relative min-h-[60vh] overflow-hidden bg-hero">
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
         <div className="absolute top-1/4 -left-32 h-96 w-96 rounded-full bg-primary/10 blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 -right-32 h-80 w-80 rounded-full bg-accent/10 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-        
+        <div
+          className="absolute bottom-1/4 -right-32 h-80 w-80 rounded-full bg-accent/10 blur-3xl animate-pulse"
+          style={{ animationDelay: "1s" }}
+        />
+
         <div className="relative mx-auto max-w-6xl px-6 pt-32">
           <div className="text-center max-w-3xl mx-auto">
             <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-6">
@@ -72,17 +87,30 @@ export default function ContactPage() {
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-4">
-                  <input required placeholder="Your name" className="w-full rounded-xl bg-muted/40 px-4 py-3 text-sm outline-none ring-1 ring-border focus:ring-primary" />
-                  <input required type="email" placeholder="Email address" className="w-full rounded-xl bg-muted/40 px-4 py-3 text-sm outline-none ring-1 ring-border focus:ring-primary" />
+                  <input
+                    required
+                    placeholder="Your name"
+                    className="w-full rounded-xl bg-muted/40 px-4 py-3 text-sm outline-none ring-1 ring-border focus:ring-primary"
+                  />
+                  <input
+                    required
+                    type="email"
+                    placeholder="Email address"
+                    className="w-full rounded-xl bg-muted/40 px-4 py-3 text-sm outline-none ring-1 ring-border focus:ring-primary"
+                  />
                 </div>
-                <input required placeholder="Company (optional)" className="w-full rounded-xl bg-muted/40 px-4 py-3 text-sm outline-none ring-1 ring-border focus:ring-primary" />
+                <input
+                  required
+                  placeholder="Company (optional)"
+                  className="w-full rounded-xl bg-muted/40 px-4 py-3 text-sm outline-none ring-1 ring-border focus:ring-primary"
+                />
                 <textarea
                   required
                   rows={5}
                   placeholder="Tell us more about what you're looking for..."
                   className="w-full rounded-xl bg-muted/40 px-4 py-3 text-sm outline-none ring-1 ring-border focus:ring-primary resize-none"
                 />
-                
+
                 <button
                   type="submit"
                   className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-primary px-7 py-3.5 text-base font-semibold text-primary-foreground shadow-glow transition-all duration-300 hover:scale-[1.02]"
@@ -104,16 +132,23 @@ export default function ContactPage() {
           {/* Info Sidebar */}
           <div className="lg:col-span-2 space-y-5">
             {contactInfo.map((info) => (
-              <div key={info.label} className="glass rounded-2xl p-6 transition-all duration-300 hover:shadow-glow">
+              <div
+                key={info.label}
+                className="glass rounded-2xl p-6 transition-all duration-300 hover:shadow-glow"
+              >
                 <div className="flex items-center gap-4">
-                  <div 
+                  <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center"
-                    style={{ background: `linear-gradient(135deg, oklch(0.6 0.15 ${info.color}), oklch(0.4 0.12 ${info.color + 30}))` }}
+                    style={{
+                      background: `linear-gradient(135deg, oklch(0.6 0.15 ${info.color}), oklch(0.4 0.12 ${info.color + 30}))`,
+                    }}
                   >
                     <info.icon className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <p className="text-xs uppercase tracking-wider text-muted-foreground">{info.label}</p>
+                    <p className="text-xs uppercase tracking-wider text-muted-foreground">
+                      {info.label}
+                    </p>
                     <p className="font-semibold">{info.value}</p>
                   </div>
                 </div>
@@ -158,10 +193,16 @@ export default function ContactPage() {
             Check our FAQ or browse documentation for quick answers.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <a href="/products" className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow transition-all duration-300 hover:scale-105">
+            <a
+              href="/products"
+              className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-6 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow transition-all duration-300 hover:scale-105"
+            >
               View Products <ArrowRight className="h-4 w-4" />
             </a>
-            <a href="/training" className="inline-flex items-center gap-2 rounded-full glass px-6 py-2.5 text-sm font-semibold transition-all duration-300 hover:bg-muted">
+            <a
+              href="/training"
+              className="inline-flex items-center gap-2 rounded-full glass px-6 py-2.5 text-sm font-semibold transition-all duration-300 hover:bg-muted"
+            >
               Learn about Training
             </a>
           </div>

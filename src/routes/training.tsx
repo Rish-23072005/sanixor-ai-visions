@@ -1,26 +1,134 @@
 import { useState, useEffect } from "react";
-import { GraduationCap, Rocket, Compass, ArrowRight, Code2, BarChart3, Palette, Briefcase, Workflow, Bot, Play, Star, Users, Trophy, Clock, Search, Filter, BookOpen, Target, Sparkles } from "lucide-react";
+import {
+  GraduationCap,
+  Rocket,
+  Compass,
+  ArrowRight,
+  Code2,
+  BarChart3,
+  Palette,
+  Briefcase,
+  Workflow,
+  Bot,
+  Play,
+  Star,
+  Users,
+  Trophy,
+  Clock,
+  Search,
+  Filter,
+  BookOpen,
+  Target,
+  Sparkles,
+} from "lucide-react";
 import { Layout } from "@/components/sanixor/Layout";
 
 const programs = [
-  { id: "bootcamp", type: "Bootcamp", title: "AI Engineering Bootcamp", duration: "12 weeks", cohort: "Cohort Based", desc: "Ship a production-grade AI product. Mentorship from Sanixor engineers and weekly live builds.", features: ["Weekly live projects", "1:1 mentorship", "Career support", "Certificate"], color: 220, level: "Intermediate", price: "$2,499" },
-  { id: "internship", type: "Internship", title: "Internship Program", duration: "3–6 months", cohort: "Paid", desc: "Work on real Sanixor products under senior engineers. Top performers convert to full-time.", features: ["Real production work", "Senior mentorship", "Stipend", "Conversion opportunity"], color: 280, level: "Beginner", price: "Paid" },
-  { id: "career", type: "Career", title: "Career Guidance", duration: "Ongoing", cohort: "1:1 Sessions", desc: "Resume reviews, interview prep, and a private network of AI hiring managers.", features: ["Resume review", "Mock interviews", "Network access", "Lifetime updates"], color: 170, level: "All Levels", price: "$499" },
+  {
+    id: "bootcamp",
+    type: "Bootcamp",
+    title: "AI Engineering Bootcamp",
+    duration: "12 weeks",
+    cohort: "Cohort Based",
+    desc: "Ship a production-grade AI product. Mentorship from Sanixor engineers and weekly live builds.",
+    features: ["Weekly live projects", "1:1 mentorship", "Career support", "Certificate"],
+    color: 220,
+    level: "Intermediate",
+    price: "$2,499",
+  },
+  {
+    id: "internship",
+    type: "Internship",
+    title: "Internship Program",
+    duration: "3–6 months",
+    cohort: "Paid",
+    desc: "Work on real Sanixor products under senior engineers. Top performers convert to full-time.",
+    features: ["Real production work", "Senior mentorship", "Stipend", "Conversion opportunity"],
+    color: 280,
+    level: "Beginner",
+    price: "Paid",
+  },
+  {
+    id: "career",
+    type: "Career",
+    title: "Career Guidance",
+    duration: "Ongoing",
+    cohort: "1:1 Sessions",
+    desc: "Resume reviews, interview prep, and a private network of AI hiring managers.",
+    features: ["Resume review", "Mock interviews", "Network access", "Lifetime updates"],
+    color: 170,
+    level: "All Levels",
+    price: "$499",
+  },
 ];
 
 const tracks = [
-  { icon: GraduationCap, title: "AI Engineering Bootcamp", duration: "12 weeks", cohort: "Cohort Based", desc: "Ship a production-grade AI product. Mentorship from Sanixor engineers and weekly live builds.", features: ["Weekly live projects", "1:1 mentorship", "Career support", "Certificate"], color: 220 },
-  { icon: Rocket, title: "Internship Program", duration: "3–6 months", cohort: "Paid", desc: "Work on real Sanixor products under senior engineers. Top performers convert to full-time.", features: ["Real production work", "Senior mentorship", "Stipend", "Conversion opportunity"], color: 280 },
-  { icon: Compass, title: "Career Guidance", duration: "Ongoing", cohort: "1:1 Sessions", desc: "Resume reviews, interview prep, and a private network of AI hiring managers.", features: ["Resume review", "Mock interviews", "Network access", "Lifetime updates"], color: 170 },
+  {
+    icon: GraduationCap,
+    title: "AI Engineering Bootcamp",
+    duration: "12 weeks",
+    cohort: "Cohort Based",
+    desc: "Ship a production-grade AI product. Mentorship from Sanixor engineers and weekly live builds.",
+    features: ["Weekly live projects", "1:1 mentorship", "Career support", "Certificate"],
+    color: 220,
+  },
+  {
+    icon: Rocket,
+    title: "Internship Program",
+    duration: "3–6 months",
+    cohort: "Paid",
+    desc: "Work on real Sanixor products under senior engineers. Top performers convert to full-time.",
+    features: ["Real production work", "Senior mentorship", "Stipend", "Conversion opportunity"],
+    color: 280,
+  },
+  {
+    icon: Compass,
+    title: "Career Guidance",
+    duration: "Ongoing",
+    cohort: "1:1 Sessions",
+    desc: "Resume reviews, interview prep, and a private network of AI hiring managers.",
+    features: ["Resume review", "Mock interviews", "Network access", "Lifetime updates"],
+    color: 170,
+  },
 ];
 
 const domains = [
-  { icon: Code2, title: "Technology & Development", desc: "Full-stack engineering, modern frameworks, and production systems.", color: 210 },
-  { icon: BarChart3, title: "Data Analytics & BI", desc: "SQL, data warehousing, Power BI, Tableau — decisions from data.", color: 260 },
-  { icon: Palette, title: "UI/UX & Product Design", desc: "Design systems, prototyping, and shipping delightful products.", color: 320 },
-  { icon: Briefcase, title: "Career Skills", desc: "Resume, interview prep, communication — built for employability.", color: 180 },
-  { icon: Workflow, title: "Automation & No-Code", desc: "Modern automation tools to remove repetitive workflows.", color: 240 },
-  { icon: Bot, title: "Agentic AI", desc: "Advanced multi-agent architectures and intelligent system design.", color: 290 },
+  {
+    icon: Code2,
+    title: "Technology & Development",
+    desc: "Full-stack engineering, modern frameworks, and production systems.",
+    color: 210,
+  },
+  {
+    icon: BarChart3,
+    title: "Data Analytics & BI",
+    desc: "SQL, data warehousing, Power BI, Tableau — decisions from data.",
+    color: 260,
+  },
+  {
+    icon: Palette,
+    title: "UI/UX & Product Design",
+    desc: "Design systems, prototyping, and shipping delightful products.",
+    color: 320,
+  },
+  {
+    icon: Briefcase,
+    title: "Career Skills",
+    desc: "Resume, interview prep, communication — built for employability.",
+    color: 180,
+  },
+  {
+    icon: Workflow,
+    title: "Automation & No-Code",
+    desc: "Modern automation tools to remove repetitive workflows.",
+    color: 240,
+  },
+  {
+    icon: Bot,
+    title: "Agentic AI",
+    desc: "Advanced multi-agent architectures and intelligent system design.",
+    color: 290,
+  },
 ];
 
 const stats = [
@@ -31,8 +139,18 @@ const stats = [
 ];
 
 const learningPath = [
-  { week: "Weeks 1-4", title: "Foundation", desc: "Python, ML fundamentals, neural networks", progress: 33 },
-  { week: "Weeks 5-8", title: "Deep Dive", desc: "LLMs, agents, fine-tuning, deployment", progress: 66 },
+  {
+    week: "Weeks 1-4",
+    title: "Foundation",
+    desc: "Python, ML fundamentals, neural networks",
+    progress: 33,
+  },
+  {
+    week: "Weeks 5-8",
+    title: "Deep Dive",
+    desc: "LLMs, agents, fine-tuning, deployment",
+    progress: 66,
+  },
   { week: "Weeks 9-11", title: "Build", desc: "Production project with team", progress: 90 },
   { week: "Week 12", title: "Launch", desc: "Demo day, portfolio, interviews", progress: 100 },
 ];
@@ -47,8 +165,9 @@ export default function TrainingPage() {
   const [activeTrack, setActiveTrack] = useState(0);
 
   const filteredPrograms = programs.filter((p) => {
-    const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                         p.desc.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch =
+      p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.desc.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesType = selectedType === "All" || p.type === selectedType;
     const matchesLevel = selectedLevel === "All" || p.level === selectedLevel;
     return matchesSearch && matchesType && matchesLevel;
@@ -60,8 +179,11 @@ export default function TrainingPage() {
       <section className="relative min-h-[70vh] overflow-hidden bg-hero">
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
         <div className="absolute top-1/3 -left-40 h-[500px] w-[500px] rounded-full bg-primary/10 blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/3 -right-40 h-[400px] w-[400px] rounded-full bg-accent/10 blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }} />
-        
+        <div
+          className="absolute bottom-1/3 -right-40 h-[400px] w-[400px] rounded-full bg-accent/10 blur-3xl animate-pulse"
+          style={{ animationDelay: "1.5s" }}
+        />
+
         <div className="relative mx-auto max-w-6xl px-6 pt-32">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-sm font-medium mb-6">
@@ -74,8 +196,8 @@ export default function TrainingPage() {
               Build the Future.
             </h1>
             <p className="mx-auto max-w-2xl text-xl text-muted-foreground mb-12">
-              Go from beginner to AI engineer in 12 weeks. Project-based learning with 
-              mentorship from industry experts.
+              Go from beginner to AI engineer in 12 weeks. Project-based learning with mentorship
+              from industry experts.
             </p>
 
             {/* Stats */}
@@ -112,7 +234,9 @@ export default function TrainingPage() {
                   key={type}
                   onClick={() => setSelectedType(type)}
                   className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-all duration-300 ${
-                    selectedType === type ? "bg-gradient-primary text-primary-foreground" : "glass hover:bg-muted"
+                    selectedType === type
+                      ? "bg-gradient-primary text-primary-foreground"
+                      : "glass hover:bg-muted"
                   }`}
                 >
                   {type}
@@ -124,7 +248,9 @@ export default function TrainingPage() {
                   key={level}
                   onClick={() => setSelectedLevel(selectedLevel === level ? "All" : level)}
                   className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-300 ${
-                    selectedLevel === level ? "bg-gradient-primary text-primary-foreground" : "glass hover:bg-muted"
+                    selectedLevel === level
+                      ? "bg-gradient-primary text-primary-foreground"
+                      : "glass hover:bg-muted"
                   }`}
                 >
                   {level}
@@ -141,7 +267,7 @@ export default function TrainingPage() {
           <h2 className="text-2xl font-bold">Programs Available</h2>
           <p className="text-muted-foreground">{filteredPrograms.length} programs</p>
         </div>
-        
+
         <div className="grid md:grid-cols-3 gap-6">
           {filteredPrograms.map((program) => (
             <div
@@ -149,12 +275,16 @@ export default function TrainingPage() {
               className="group glass rounded-[2rem] p-6 shadow-elegant transition-all duration-500 hover:shadow-glow hover:-translate-y-2 flex flex-col"
             >
               <div className="flex items-center justify-between mb-4">
-                <span className="px-3 py-1 rounded-full glass text-xs font-medium">{program.type}</span>
+                <span className="px-3 py-1 rounded-full glass text-xs font-medium">
+                  {program.type}
+                </span>
                 <span className="text-sm font-semibold text-primary">{program.price}</span>
               </div>
-              <div 
+              <div
                 className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 flex-shrink-0"
-                style={{ background: `linear-gradient(135deg, oklch(0.6 0.15 ${program.color}), oklch(0.4 0.12 ${program.color + 30}))` }}
+                style={{
+                  background: `linear-gradient(135deg, oklch(0.6 0.15 ${program.color}), oklch(0.4 0.12 ${program.color + 30}))`,
+                }}
               >
                 {program.type === "Bootcamp" && <GraduationCap className="h-5 w-5 text-white" />}
                 {program.type === "Internship" && <Rocket className="h-5 w-5 text-white" />}
@@ -162,14 +292,20 @@ export default function TrainingPage() {
               </div>
               <h3 className="text-lg font-bold mb-2">{program.title}</h3>
               <div className="flex flex-wrap gap-2 text-xs text-muted-foreground mb-3">
-                <span className="flex items-center gap-1"><Clock className="h-3 w-3" /> {program.duration}</span>
+                <span className="flex items-center gap-1">
+                  <Clock className="h-3 w-3" /> {program.duration}
+                </span>
                 <span>·</span>
                 <span>{program.level}</span>
               </div>
-              <p className="text-sm text-muted-foreground mb-4 line-clamp-2 flex-grow">{program.desc}</p>
+              <p className="text-sm text-muted-foreground mb-4 line-clamp-2 flex-grow">
+                {program.desc}
+              </p>
               <div className="flex flex-wrap gap-2 mb-4">
                 {program.features.slice(2).map((f) => (
-                  <span key={f} className="px-2 py-1 rounded-lg glass text-xs">{f}</span>
+                  <span key={f} className="px-2 py-1 rounded-lg glass text-xs">
+                    {f}
+                  </span>
                 ))}
               </div>
               <button className="w-full inline-flex items-center justify-center gap-2 rounded-full bg-gradient-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow transition-all duration-300 hover:scale-105 mt-auto">
@@ -181,7 +317,9 @@ export default function TrainingPage() {
 
         {filteredPrograms.length === 0 && (
           <div className="text-center py-20">
-            <p className="text-muted-foreground">No programs match your criteria. Check back soon!</p>
+            <p className="text-muted-foreground">
+              No programs match your criteria. Check back soon!
+            </p>
           </div>
         )}
       </section>
@@ -213,7 +351,7 @@ export default function TrainingPage() {
         </div>
 
         <div className="glass-strong rounded-[3rem] p-8 md:p-16 shadow-elegant relative overflow-hidden">
-          <div 
+          <div
             className="absolute inset-0 opacity-10"
             style={{
               background: `radial-gradient(circle at 80% 20%, oklch(0.6 0.15 ${tracks[activeTrack].color}), transparent 50%)`,
@@ -227,7 +365,7 @@ export default function TrainingPage() {
               </div>
               <h3 className="text-3xl md:text-4xl font-bold mb-4">{tracks[activeTrack].title}</h3>
               <p className="text-lg text-muted-foreground mb-8">{tracks[activeTrack].desc}</p>
-              
+
               <div className="flex flex-wrap gap-3 mb-8">
                 {tracks[activeTrack].features.map((f) => (
                   <span key={f} className="px-4 py-2 rounded-full glass text-sm">
@@ -235,7 +373,7 @@ export default function TrainingPage() {
                   </span>
                 ))}
               </div>
-              
+
               <div className="flex gap-4">
                 <button className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground shadow-glow transition-all duration-300 hover:scale-105">
                   Apply Now <ArrowRight className="h-4 w-4" />
@@ -245,9 +383,9 @@ export default function TrainingPage() {
                 </button>
               </div>
             </div>
-            
+
             <div className="relative">
-              <div 
+              <div
                 className="aspect-square rounded-3xl shadow-elegant"
                 style={{
                   background: `linear-gradient(135deg, oklch(0.3 0.1 ${tracks[activeTrack].color}), oklch(0.15 0.05 ${tracks[activeTrack].color + 40}))`,
@@ -280,7 +418,7 @@ export default function TrainingPage() {
                 <h3 className="text-xl font-bold mb-2">{step.title}</h3>
                 <p className="text-sm text-muted-foreground mb-4">{step.desc}</p>
                 <div className="h-1 bg-muted rounded-full overflow-hidden">
-                  <div 
+                  <div
                     className="h-full bg-gradient-primary rounded-full transition-all duration-1000"
                     style={{ width: `${step.progress}%` }}
                   />
@@ -309,7 +447,7 @@ export default function TrainingPage() {
               key={d.title}
               className="group glass rounded-3xl p-8 transition-all duration-500 hover:shadow-glow hover:-translate-y-2"
             >
-              <div 
+              <div
                 className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5 transition-transform duration-300 group-hover:scale-110"
                 style={{
                   background: `linear-gradient(135deg, oklch(0.6 0.15 ${d.color}), oklch(0.4 0.12 ${d.color + 30}))`,
@@ -334,10 +472,16 @@ export default function TrainingPage() {
               Join our next cohort and become job-ready in AI engineering. Limited seats available.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="/hiring" className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-glow transition-all duration-300 hover:scale-105">
+              <a
+                href="/hiring"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-glow transition-all duration-300 hover:scale-105"
+              >
                 Apply Now <ArrowRight className="h-5 w-5" />
               </a>
-              <a href="/contact" className="inline-flex items-center gap-2 rounded-full glass px-8 py-4 text-base font-semibold transition-all duration-300 hover:bg-muted">
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-full glass px-8 py-4 text-base font-semibold transition-all duration-300 hover:bg-muted"
+              >
                 Talk to Us
               </a>
             </div>

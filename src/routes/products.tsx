@@ -1,5 +1,18 @@
 import { useState, useEffect } from "react";
-import { Code2, Gauge, BarChart3, Bot, Workflow, X, ArrowRight, Play, Check, Zap, Shield, TrendingUp } from "lucide-react";
+import {
+  Code2,
+  Gauge,
+  BarChart3,
+  Bot,
+  Workflow,
+  X,
+  ArrowRight,
+  Play,
+  Check,
+  Zap,
+  Shield,
+  TrendingUp,
+} from "lucide-react";
 import { Layout } from "@/components/sanixor/Layout";
 
 const products = [
@@ -9,7 +22,13 @@ const products = [
     tag: "AI Hackathon Evaluation",
     icon: Code2,
     desc: "AI-powered multi-agent hackathon evaluation system — transparent, intelligent, and automated. Solves slow, biased, inconsistent manual judging.",
-    features: ["AI-based project evaluation", "Bias-free scoring", "Real-time leaderboard", "Automated judge assignment", "Scalable for large events"],
+    features: [
+      "AI-based project evaluation",
+      "Bias-free scoring",
+      "Real-time leaderboard",
+      "Automated judge assignment",
+      "Scalable for large events",
+    ],
     color: 220,
     stats: "10K+ events evaluated",
   },
@@ -19,7 +38,12 @@ const products = [
     tag: "Performance Intelligence",
     icon: Gauge,
     desc: "Standardized AI-driven benchmarking platform for systems, models, and workflows — with real-time comparative analytics.",
-    features: ["AI model performance benchmarking", "System efficiency scoring", "Comparative analytics dashboards", "Real-time performance insights"],
+    features: [
+      "AI model performance benchmarking",
+      "System efficiency scoring",
+      "Comparative analytics dashboards",
+      "Real-time performance insights",
+    ],
     color: 280,
     stats: "500+ models tracked",
   },
@@ -29,26 +53,89 @@ const products = [
     tag: "Analytics & Dashboard Automation",
     icon: BarChart3,
     desc: "AI-powered analytics platform that auto-generates dashboards and predictive reports across your data stack.",
-    features: ["Automated dashboard generation", "Real-time data visualization", "Power BI / Tableau / SQL integration", "Predictive insights & reporting"],
+    features: [
+      "Automated dashboard generation",
+      "Real-time data visualization",
+      "Power BI / Tableau / SQL integration",
+      "Predictive insights & reporting",
+    ],
     color: 170,
     stats: "1M+ dashboards generated",
   },
 ];
 
 const services = [
-  { name: "Agent as a Service (AaaS)", icon: Bot, desc: "Deploy intelligent AI agents without infrastructure complexity.", points: ["Multi-agent systems", "Task automation agents", "Conversational AI agents", "Workflow orchestration"], color: 210 },
-  { name: "Customized Agentic Solutions", icon: Workflow, desc: "Tailor-made AI systems designed for specific business needs.", points: ["End-to-end automation", "Domain-specific AI agents", "Enterprise workflow automation", "Decision intelligence systems"], color: 260 },
+  {
+    name: "Agent as a Service (AaaS)",
+    icon: Bot,
+    desc: "Deploy intelligent AI agents without infrastructure complexity.",
+    points: [
+      "Multi-agent systems",
+      "Task automation agents",
+      "Conversational AI agents",
+      "Workflow orchestration",
+    ],
+    color: 210,
+  },
+  {
+    name: "Customized Agentic Solutions",
+    icon: Workflow,
+    desc: "Tailor-made AI systems designed for specific business needs.",
+    points: [
+      "End-to-end automation",
+      "Domain-specific AI agents",
+      "Enterprise workflow automation",
+      "Decision intelligence systems",
+    ],
+    color: 260,
+  },
 ];
 
 const tiers = [
-  { name: "Starter", price: "$0", desc: "Perfect for getting started.", features: ["Community access", "Basic features", "100 API calls/month"], popular: false },
-  { name: "Pro", price: "$49", desc: "For growing teams.", features: ["Everything in Starter", "Unlimited API calls", "Priority support", "Custom integrations"], popular: true },
-  { name: "Enterprise", price: "Custom", desc: "For large organizations.", features: ["Unlimited everything", "Dedicated support", "SLA guarantee", "On-premise deployment"], popular: false },
+  {
+    name: "Starter",
+    price: "$0",
+    desc: "Perfect for getting started.",
+    features: ["Community access", "Basic features", "100 API calls/month"],
+    popular: false,
+  },
+  {
+    name: "Pro",
+    price: "$49",
+    desc: "For growing teams.",
+    features: [
+      "Everything in Starter",
+      "Unlimited API calls",
+      "Priority support",
+      "Custom integrations",
+    ],
+    popular: true,
+  },
+  {
+    name: "Enterprise",
+    price: "Custom",
+    desc: "For large organizations.",
+    features: [
+      "Unlimited everything",
+      "Dedicated support",
+      "SLA guarantee",
+      "On-premise deployment",
+    ],
+    popular: false,
+  },
 ];
 
 const benefits = [
-  { icon: Zap, title: "Lightning Fast", desc: "Sub-100ms response times with optimized AI pipelines" },
-  { icon: Shield, title: "Enterprise Security", desc: "SOC 2 Type II certified with end-to-end encryption" },
+  {
+    icon: Zap,
+    title: "Lightning Fast",
+    desc: "Sub-100ms response times with optimized AI pipelines",
+  },
+  {
+    icon: Shield,
+    title: "Enterprise Security",
+    desc: "SOC 2 Type II certified with end-to-end encryption",
+  },
   { icon: TrendingUp, title: "Scalable", desc: "From startup to Fortune 500 — we scale with you" },
   { icon: Check, title: "Reliable", desc: "99.99% uptime SLA with redundant infrastructure" },
 ];
@@ -71,20 +158,26 @@ export default function ProductsPage() {
       <section className="relative min-h-[80vh] overflow-hidden bg-hero">
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
         <div className="absolute top-1/4 -left-32 h-96 w-96 rounded-full bg-primary/15 blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 -right-32 h-80 w-80 rounded-full bg-accent/15 blur-3xl animate-pulse" style={{ animationDelay: '2s' }} />
-        
+        <div
+          className="absolute bottom-1/4 -right-32 h-80 w-80 rounded-full bg-accent/15 blur-3xl animate-pulse"
+          style={{ animationDelay: "2s" }}
+        />
+
         <div className="relative mx-auto max-w-6xl px-6 pt-32">
           <div className="text-center">
             <h1 className="text-6xl md:text-8xl font-bold tracking-tight mb-6">
               Products that <span className="text-gradient">deliver.</span>
             </h1>
             <p className="mx-auto max-w-2xl text-xl text-muted-foreground mb-8">
-              Production-grade AI tools built by engineers, for engineers. 
-              Ship faster with our battle-tested platforms.
+              Production-grade AI tools built by engineers, for engineers. Ship faster with our
+              battle-tested platforms.
             </p>
             <div className="flex flex-wrap justify-center gap-8 mb-8">
               {benefits.slice(0, 4).map((b) => (
-                <div key={b.title} className="flex items-center gap-2 text-sm text-muted-foreground">
+                <div
+                  key={b.title}
+                  className="flex items-center gap-2 text-sm text-muted-foreground"
+                >
                   <b.icon className="h-4 w-4 text-primary" /> {b.title}
                 </div>
               ))}
@@ -102,15 +195,19 @@ export default function ProductsPage() {
               onClick={() => setActiveProduct(p.id)}
               className="group relative glass rounded-[2rem] p-8 text-left shadow-elegant transition-all duration-500 hover:shadow-glow hover:-translate-y-2"
             >
-              <div 
+              <div
                 className="absolute inset-0 rounded-[2rem] opacity-0 group-hover:opacity-15 transition-opacity duration-500"
-                style={{ background: `radial-gradient(circle at 50% 0%, oklch(0.6 0.15 ${p.color}), transparent 60%)` }}
+                style={{
+                  background: `radial-gradient(circle at 50% 0%, oklch(0.6 0.15 ${p.color}), transparent 60%)`,
+                }}
               />
               <div className="relative">
                 <div className="flex items-center justify-between mb-6">
-                  <div 
+                  <div
                     className="w-14 h-14 rounded-2xl flex items-center justify-center shadow-glow"
-                    style={{ background: `linear-gradient(135deg, oklch(0.6 0.15 ${p.color}), oklch(0.4 0.12 ${p.color + 30}))` }}
+                    style={{
+                      background: `linear-gradient(135deg, oklch(0.6 0.15 ${p.color}), oklch(0.4 0.12 ${p.color + 30}))`,
+                    }}
                   >
                     <p.icon className="h-6 w-6 text-white" />
                   </div>
@@ -134,11 +231,16 @@ export default function ProductsPage() {
         </div>
         <div className="grid md:grid-cols-2 gap-8">
           {services.map((s) => (
-            <div key={s.name} className="glass rounded-[2rem] p-8 shadow-elegant transition-all duration-500 hover:shadow-glow">
+            <div
+              key={s.name}
+              className="glass rounded-[2rem] p-8 shadow-elegant transition-all duration-500 hover:shadow-glow"
+            >
               <div className="flex items-start gap-4">
-                <div 
+                <div
                   className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
-                  style={{ background: `linear-gradient(135deg, oklch(0.6 0.15 ${s.color}), oklch(0.4 0.12 ${s.color + 30}))` }}
+                  style={{
+                    background: `linear-gradient(135deg, oklch(0.6 0.15 ${s.color}), oklch(0.4 0.12 ${s.color + 30}))`,
+                  }}
                 >
                   <s.icon className="h-6 w-6 text-white" />
                 </div>
@@ -147,7 +249,10 @@ export default function ProductsPage() {
                   <p className="text-muted-foreground text-sm mb-4">{s.desc}</p>
                   <div className="grid grid-cols-2 gap-2">
                     {s.points.map((pt) => (
-                      <div key={pt} className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <div
+                        key={pt}
+                        className="flex items-center gap-2 text-sm text-muted-foreground"
+                      >
                         <span className="h-1 w-1 rounded-full bg-primary" /> {pt}
                       </div>
                     ))}
@@ -189,7 +294,9 @@ export default function ProductsPage() {
                   </li>
                 ))}
               </ul>
-              <button className={`w-full rounded-full py-3 text-sm font-semibold transition-all duration-300 hover:scale-[1.02] ${t.popular ? "bg-gradient-primary text-primary-foreground shadow-glow" : "glass"}`}>
+              <button
+                className={`w-full rounded-full py-3 text-sm font-semibold transition-all duration-300 hover:scale-[1.02] ${t.popular ? "bg-gradient-primary text-primary-foreground shadow-glow" : "glass"}`}
+              >
                 Get Started
               </button>
             </div>
@@ -207,7 +314,10 @@ export default function ProductsPage() {
               Get started with our products today. Free tier available for individual developers.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
-              <a href="/contact" className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-glow transition-all duration-300 hover:scale-105">
+              <a
+                href="/contact"
+                className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-8 py-4 text-base font-semibold text-primary-foreground shadow-glow transition-all duration-300 hover:scale-105"
+              >
                 Start Free Trial <ArrowRight className="h-5 w-5" />
               </a>
               <button className="inline-flex items-center gap-2 rounded-full glass px-8 py-4 text-base font-semibold transition-all duration-300 hover:scale-105">
@@ -220,15 +330,26 @@ export default function ProductsPage() {
 
       {/* Product Modal */}
       {active && (
-        <div className="fixed inset-0 z-[200] grid place-items-center bg-background/80 backdrop-blur-xl p-6" onClick={() => setActiveProduct(null)}>
-          <div className="relative w-full max-w-2xl rounded-[2rem] glass-strong p-10 shadow-elegant" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => setActiveProduct(null)} className="absolute right-6 top-6 grid h-10 w-10 place-items-center rounded-full glass hover:bg-muted">
+        <div
+          className="fixed inset-0 z-[200] grid place-items-center bg-background/80 backdrop-blur-xl p-6"
+          onClick={() => setActiveProduct(null)}
+        >
+          <div
+            className="relative w-full max-w-2xl rounded-[2rem] glass-strong p-10 shadow-elegant"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setActiveProduct(null)}
+              className="absolute right-6 top-6 grid h-10 w-10 place-items-center rounded-full glass hover:bg-muted"
+            >
               <X className="h-4 w-4" />
             </button>
             <div className="flex items-center gap-4 mb-6">
-              <div 
+              <div
                 className="w-16 h-16 rounded-2xl flex items-center justify-center"
-                style={{ background: `linear-gradient(135deg, oklch(0.6 0.15 ${active.color}), oklch(0.4 0.12 ${active.color + 30}))` }}
+                style={{
+                  background: `linear-gradient(135deg, oklch(0.6 0.15 ${active.color}), oklch(0.4 0.12 ${active.color + 30}))`,
+                }}
               >
                 <active.icon className="h-8 w-8 text-white" />
               </div>

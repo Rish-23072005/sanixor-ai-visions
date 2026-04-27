@@ -1,14 +1,66 @@
 import { useState, useEffect } from "react";
-import { Briefcase, MapPin, Upload, ArrowRight, Search, Users, Building2, Globe, Sparkles } from "lucide-react";
+import {
+  Briefcase,
+  MapPin,
+  Upload,
+  ArrowRight,
+  Search,
+  Users,
+  Building2,
+  Globe,
+  Sparkles,
+} from "lucide-react";
 import { Layout } from "@/components/sanixor/Layout";
 
 const jobs = [
-  { role: "Senior AI Engineer", location: "Bengaluru / Remote", type: "Full-time", team: "Engineering", desc: "Lead production model development across HackEval and BitBench.", color: 220 },
-  { role: "ML Research Scientist", location: "Remote", type: "Full-time", team: "Research", desc: "Push the frontier on bias-detection and explainable AI.", color: 280 },
-  { role: "Product Designer", location: "Bengaluru", type: "Full-time", team: "Design", desc: "Design premium, interactive surfaces for our AI products.", color: 170 },
-  { role: "Growth Engineer", location: "Remote", type: "Full-time", team: "Growth", desc: "Own the funnel — from landing to activation, instrumented end-to-end.", color: 210 },
-  { role: "Senior Backend Engineer", location: "Bengaluru", type: "Full-time", team: "Engineering", desc: "Build scalable APIs and infrastructure for AI products.", color: 240 },
-  { role: "Technical Writer", location: "Remote", type: "Part-time", team: "Content", desc: "Create documentation and tutorials for developer experience.", color: 190 },
+  {
+    role: "Senior AI Engineer",
+    location: "Bengaluru / Remote",
+    type: "Full-time",
+    team: "Engineering",
+    desc: "Lead production model development across HackEval and BitBench.",
+    color: 220,
+  },
+  {
+    role: "ML Research Scientist",
+    location: "Remote",
+    type: "Full-time",
+    team: "Research",
+    desc: "Push the frontier on bias-detection and explainable AI.",
+    color: 280,
+  },
+  {
+    role: "Product Designer",
+    location: "Bengaluru",
+    type: "Full-time",
+    team: "Design",
+    desc: "Design premium, interactive surfaces for our AI products.",
+    color: 170,
+  },
+  {
+    role: "Growth Engineer",
+    location: "Remote",
+    type: "Full-time",
+    team: "Growth",
+    desc: "Own the funnel — from landing to activation, instrumented end-to-end.",
+    color: 210,
+  },
+  {
+    role: "Senior Backend Engineer",
+    location: "Bengaluru",
+    type: "Full-time",
+    team: "Engineering",
+    desc: "Build scalable APIs and infrastructure for AI products.",
+    color: 240,
+  },
+  {
+    role: "Technical Writer",
+    location: "Remote",
+    type: "Part-time",
+    team: "Content",
+    desc: "Create documentation and tutorials for developer experience.",
+    color: 190,
+  },
 ];
 
 const teams = ["All", "Engineering", "Research", "Design", "Growth", "Content"];
@@ -29,11 +81,15 @@ export default function HiringPage() {
   const [selectedLocation, setSelectedLocation] = useState("All");
 
   const filteredJobs = jobs.filter((job) => {
-    const matchesSearch = job.role.toLowerCase().includes(searchQuery.toLowerCase()) || 
-                         job.desc.toLowerCase().includes(searchQuery.toLowerCase());
+    const matchesSearch =
+      job.role.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      job.desc.toLowerCase().includes(searchQuery.toLowerCase());
     const matchesTeam = selectedTeam === "All" || job.team === selectedTeam;
-    const matchesLocation = selectedLocation === "All" || 
-                           (selectedLocation === "Remote" ? job.location.includes("Remote") : job.location.includes("Bengaluru"));
+    const matchesLocation =
+      selectedLocation === "All" ||
+      (selectedLocation === "Remote"
+        ? job.location.includes("Remote")
+        : job.location.includes("Bengaluru"));
     return matchesSearch && matchesTeam && matchesLocation;
   });
 
@@ -43,8 +99,11 @@ export default function HiringPage() {
       <section className="relative min-h-[70vh] overflow-hidden bg-hero">
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.02]" />
         <div className="absolute top-1/3 -left-40 h-[500px] w-[500px] rounded-full bg-primary/10 blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/3 -right-40 h-[400px] w-[400px] rounded-full bg-accent/10 blur-3xl animate-pulse" style={{ animationDelay: '1.5s' }} />
-        
+        <div
+          className="absolute bottom-1/3 -right-40 h-[400px] w-[400px] rounded-full bg-accent/10 blur-3xl animate-pulse"
+          style={{ animationDelay: "1.5s" }}
+        />
+
         <div className="relative mx-auto max-w-6xl px-6 pt-32">
           <div className="text-center">
             <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-2 text-sm font-medium mb-6">
@@ -55,8 +114,8 @@ export default function HiringPage() {
               Join the <span className="text-gradient">future</span> of AI
             </h1>
             <p className="mx-auto max-w-2xl text-xl text-muted-foreground mb-12">
-              Work on challenging problems with smart people. Build products used by 
-              thousands of developers worldwide.
+              Work on challenging problems with smart people. Build products used by thousands of
+              developers worldwide.
             </p>
 
             {/* Stats */}
@@ -92,7 +151,9 @@ export default function HiringPage() {
                   key={team}
                   onClick={() => setSelectedTeam(team)}
                   className={`px-4 py-2 rounded-xl text-sm font-medium transition-all duration-300 ${
-                    selectedTeam === team ? "bg-gradient-primary text-primary-foreground" : "glass hover:bg-muted"
+                    selectedTeam === team
+                      ? "bg-gradient-primary text-primary-foreground"
+                      : "glass hover:bg-muted"
                   }`}
                 >
                   {team}
@@ -109,7 +170,7 @@ export default function HiringPage() {
           <h2 className="text-2xl font-bold">Open Positions</h2>
           <p className="text-muted-foreground">{filteredJobs.length} roles available</p>
         </div>
-        
+
         <div className="grid gap-4">
           {filteredJobs.map((job) => (
             <div
@@ -118,14 +179,18 @@ export default function HiringPage() {
             >
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div className="flex items-center gap-4">
-                  <div 
+                  <div
                     className="w-12 h-12 rounded-xl flex items-center justify-center"
-                    style={{ background: `linear-gradient(135deg, oklch(0.6 0.15 ${job.color}), oklch(0.4 0.12 ${job.color + 30}))` }}
+                    style={{
+                      background: `linear-gradient(135deg, oklch(0.6 0.15 ${job.color}), oklch(0.4 0.12 ${job.color + 30}))`,
+                    }}
                   >
                     <Briefcase className="h-5 w-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">{job.role}</h3>
+                    <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
+                      {job.role}
+                    </h3>
                     <div className="flex flex-wrap items-center gap-3 text-sm text-muted-foreground mt-1">
                       <span className="inline-flex items-center gap-1">
                         <MapPin className="h-3 w-3" /> {job.location}
@@ -138,7 +203,9 @@ export default function HiringPage() {
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
-                  <p className="text-sm text-muted-foreground hidden md:block max-w-xs">{job.desc}</p>
+                  <p className="text-sm text-muted-foreground hidden md:block max-w-xs">
+                    {job.desc}
+                  </p>
                   <button
                     onClick={() => setApplyTo(job.role)}
                     className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-glow transition-all duration-300 hover:scale-105"
@@ -170,7 +237,9 @@ export default function HiringPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Smart teammates</h3>
-                  <p className="text-sm text-muted-foreground">Work with people who push you to be better.</p>
+                  <p className="text-sm text-muted-foreground">
+                    Work with people who push you to be better.
+                  </p>
                 </div>
               </div>
               <div className="flex gap-4">
@@ -179,7 +248,9 @@ export default function HiringPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Great culture</h3>
-                  <p className="text-sm text-muted-foreground">Remote-first, flexible hours, and autonomy.</p>
+                  <p className="text-sm text-muted-foreground">
+                    Remote-first, flexible hours, and autonomy.
+                  </p>
                 </div>
               </div>
               <div className="flex gap-4">
@@ -188,7 +259,9 @@ export default function HiringPage() {
                 </div>
                 <div>
                   <h3 className="font-semibold mb-1">Impact at scale</h3>
-                  <p className="text-sm text-muted-foreground">Build products used by thousands daily.</p>
+                  <p className="text-sm text-muted-foreground">
+                    Build products used by thousands daily.
+                  </p>
                 </div>
               </div>
             </div>
@@ -211,7 +284,10 @@ export default function HiringPage() {
 
       {/* Apply Modal */}
       {applyTo && (
-        <div className="fixed inset-0 z-[200] grid place-items-center bg-background/80 backdrop-blur-xl p-6" onClick={() => setApplyTo(null)}>
+        <div
+          className="fixed inset-0 z-[200] grid place-items-center bg-background/80 backdrop-blur-xl p-6"
+          onClick={() => setApplyTo(null)}
+        >
           <form
             onClick={(e) => e.stopPropagation()}
             onSubmit={(e) => {
@@ -223,18 +299,43 @@ export default function HiringPage() {
             className="w-full max-w-lg rounded-[2rem] glass-strong p-8 shadow-elegant"
           >
             <h3 className="text-2xl font-bold mb-2">Apply for {applyTo}</h3>
-            <p className="text-sm text-muted-foreground mb-6">Tell us about yourself and we'll get back to you.</p>
+            <p className="text-sm text-muted-foreground mb-6">
+              Tell us about yourself and we'll get back to you.
+            </p>
             <div className="space-y-4">
-              <input required placeholder="Full name" className="w-full rounded-xl bg-muted/40 px-4 py-3 text-sm outline-none ring-1 ring-border focus:ring-primary" />
-              <input required type="email" placeholder="Email" className="w-full rounded-xl bg-muted/40 px-4 py-3 text-sm outline-none ring-1 ring-border focus:ring-primary" />
-              <input required placeholder="LinkedIn URL" className="w-full rounded-xl bg-muted/40 px-4 py-3 text-sm outline-none ring-1 ring-border focus:ring-primary" />
+              <input
+                required
+                placeholder="Full name"
+                className="w-full rounded-xl bg-muted/40 px-4 py-3 text-sm outline-none ring-1 ring-border focus:ring-primary"
+              />
+              <input
+                required
+                type="email"
+                placeholder="Email"
+                className="w-full rounded-xl bg-muted/40 px-4 py-3 text-sm outline-none ring-1 ring-border focus:ring-primary"
+              />
+              <input
+                required
+                placeholder="LinkedIn URL"
+                className="w-full rounded-xl bg-muted/40 px-4 py-3 text-sm outline-none ring-1 ring-border focus:ring-primary"
+              />
               <label className="flex cursor-pointer items-center gap-3 rounded-xl border border-dashed border-border bg-muted/20 p-4 text-sm transition-all duration-300 hover:border-primary">
                 <Upload className="h-4 w-4 text-primary" />
-                <span className="flex-1 text-muted-foreground">{file ? file.name : "Upload resume (PDF)"}</span>
-                <input type="file" accept=".pdf" hidden onChange={(e) => setFile(e.target.files?.[0] ?? null)} />
+                <span className="flex-1 text-muted-foreground">
+                  {file ? file.name : "Upload resume (PDF)"}
+                </span>
+                <input
+                  type="file"
+                  accept=".pdf"
+                  hidden
+                  onChange={(e) => setFile(e.target.files?.[0] ?? null)}
+                />
               </label>
             </div>
-            <button type="submit" className="mt-6 w-full rounded-full bg-gradient-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition-all duration-300 hover:scale-[1.02]">
+            <button
+              type="submit"
+              className="mt-6 w-full rounded-full bg-gradient-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow transition-all duration-300 hover:scale-[1.02]"
+            >
               Submit Application
             </button>
           </form>

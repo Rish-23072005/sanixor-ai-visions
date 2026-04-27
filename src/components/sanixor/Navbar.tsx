@@ -51,7 +51,7 @@ export function Navbar() {
 
           <div className="flex items-center gap-2">
             <ThemePicker />
-            
+
             {/* 6-dot grid button */}
             <button
               onClick={() => setMenuOpen(true)}
